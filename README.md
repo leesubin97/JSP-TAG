@@ -12,11 +12,11 @@ coretag, ELtag, JSPtag
   형식
   ${값, 연산식}
   
- ### - 주로 JSP의 표현식을 대체하기 위해 사용되는 좀더 간편한 도구.(jsp 2.0 이상에서 사용 가능)
+#### - 주로 JSP의 표현식을 대체하기 위해 사용되는 좀더 간편한 도구.(jsp 2.0 이상에서 사용 가능)
 
- ### - ${}와 같이 사용한다.
+#### - ${}와 같이 사용한다.
 
- ### - ${스코프.변수명} : 스코프는 request, pagecontext, application, session이 있고, 기본은 request, 그중에 attribute 값이다.
+#### - ${스코프.변수명} : 스코프는 request, pagecontext, application, session이 있고, 기본은 request, 그중에 attribute 값이다.
 
  
 ```
@@ -26,7 +26,7 @@ ${member} => request.getAttribute("member");
 ```
  
 
-**- 위와 같이, attribute 안에 든 것은 그냥 해당 키값을 쓰면 되고, parameter 안의 것은 param.name 이런 식으로 사용.
+**- 위와 같이, attribute 안에 든 것은 그냥 해당 키값을 쓰면 되고, parameter 안의 것은 param.name 이런 식으로 사용.**
 
  ```
 
