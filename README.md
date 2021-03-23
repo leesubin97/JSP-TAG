@@ -1,6 +1,66 @@
 # JSP-TAG
 coretag, ELtag, JSPtag
-## JSP tag
+## EL
+
+  :front end에서 java를 사용하지 않기 위함
+  
+  Expression language
+  
+  EL tag -> value
+  Coretag  -> 제어문, jar를 추가
+  
+  형식
+  ${값, 연산식}
+  
+ ### - 주로 JSP의 표현식을 대체하기 위해 사용되는 좀더 간편한 도구.(jsp 2.0 이상에서 사용 가능)
+
+ ### - ${}와 같이 사용한다.
+
+ ### - ${스코프.변수명} : 스코프는 request, pagecontext, application, session이 있고, 기본은 request, 그중에 attribute 값이다.
+
+ 
+```
+${param.name} => request.getParameter("name");
+
+${member} => request.getAttribute("member");
+```
+ 
+
+**- 위와 같이, attribute 안에 든 것은 그냥 해당 키값을 쓰면 되고, parameter 안의 것은 param.name 이런 식으로 사용.
+
+ ```
+
+${member.name} => Member m = (Member)request.getAttribute("member");
+
+                                    m.getName();
+
+${list["0"]} => List list = (List)request.getAttribute("list");
+
+                         list.get(0);
+```
+```
+
+<%
+ String str = "hello";
+request.setAttribute("_str",str);
+%>
+
+<%
+ String s = (String)request.getAttribute("_str");
+%>
+
+<%
+out.println("s = " + s );
+%>
+<br><br>
+
+s=<%=s %>
+<br><br>
+<!-- EL 태그 -->
+s = ${_str}
+```
+
+
 ** 표현 언어(EL:Expression Language) **
 - 데이터를 웹 페이지에 표시하는데 사용하는 태그
 - JSP 출력에 대한 부분을 쉽게 하기 위해 개발한 태그
@@ -23,7 +83,7 @@ request.getParameter("pw") ---> ${param.pw}
 - sessionScope : 내장객체 session
 - applicationScope : 내장객체 application
 
-
+## JSP tag
 
 
 ** JSTL (JSP Standard Tag Library) **
